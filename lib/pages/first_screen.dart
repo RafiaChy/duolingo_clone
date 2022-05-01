@@ -51,9 +51,9 @@ class _FirstScreenState extends State<FirstScreen> {
               childWhenDragging: Container(
                 width: 70,
                 height: 50,
-                child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
+                //child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
                decoration: BoxDecoration(
-                 color: Colors.blueGrey,
+                 color: Colors.grey,
                  border: Border.all(
                  color: Colors.grey,
                  width: 2,
