@@ -21,9 +21,9 @@ class _FirstScreenState extends State<FirstScreen> {
               data: 'Word',
 
               child: Container(
-                width: 50,
-                height: 30,
-                child: Text('Word', style: TextStyle(color: Colors.white),),
+                width: 70,
+                height: 50,
+                child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
                decoration: BoxDecoration(
                  color: Colors.blueGrey,
                  border: Border.all(
