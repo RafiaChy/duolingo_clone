@@ -1,3 +1,4 @@
+import 'package:duolingo_clone/pages/first_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
        
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: FirstScreen(),
     );
   }
 }

@@ -11,7 +11,9 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber,
       body: SafeArea(
+        
         child: Column(
           children: [
           
@@ -21,7 +23,7 @@ class _FirstScreenState extends State<FirstScreen> {
               child: Container(
                 width: 50,
                 height: 30,
-                child: Text('Word'),
+                child: Text('Word', style: TextStyle(color: Colors.white),),
                decoration: BoxDecoration(
                  color: Colors.blueGrey,
                  border: Border.all(
