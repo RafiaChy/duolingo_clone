@@ -35,10 +35,34 @@ class _FirstScreenState extends State<FirstScreen> {
                ),
               ), 
               feedback: Container(
-                width: 50,
-                height: 30,
-                color: Colors.grey,
-              )),
+                width: 70,
+                height: 50,
+                child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ),
+              childWhenDragging: Container(
+                width: 70,
+                height: 50,
+                child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ),
+              ),
           ],
         )
         
