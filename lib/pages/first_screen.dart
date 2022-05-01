@@ -8,8 +8,10 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
+  String text = '';
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Colors.amber,
       body: SafeArea(
@@ -50,8 +52,7 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
               childWhenDragging: Container(
                 width: 70,
-                height: 50,
-                //child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
+                height: 50,              
                decoration: BoxDecoration(
                  color: Colors.grey,
                  border: Border.all(
@@ -63,6 +64,34 @@ class _FirstScreenState extends State<FirstScreen> {
                ),
               ),
               ),
+
+              DragTarget<String>(
+                builder: (
+            BuildContext context,
+            List<dynamic> accepted,
+            List<dynamic> rejected,
+          ) {
+            return Container(
+                width: 70,
+                height: 50,
+                child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              );
+          },
+          onAccept: (String data) {
+            setState(() {
+              text = data ;
+            });
+          },
+                ),
           ],
         )
         
