@@ -25,7 +25,7 @@ class _FirstScreenState extends State<FirstScreen> {
               child: Container(
                 width: 70,
                 height: 50,
-                child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
+                child: const Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
                decoration: BoxDecoration(
                  color: Colors.blueGrey,
                  border: Border.all(
@@ -39,7 +39,98 @@ class _FirstScreenState extends State<FirstScreen> {
               feedback: Container(
                 width: 70,
                 height: 50,
-                child: Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
+                child: const Center(child: Text('Word', style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ),
+              childWhenDragging: Container(
+                width: 70,
+                height: 50,              
+               decoration: BoxDecoration(
+                 color: Colors.grey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ),
+              ),
+
+               Draggable<String>(
+              data: 'am',
+
+              child: Container(
+                width: 70,
+                height: 50,
+                child: const Center(child: Text('am', style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ), 
+              feedback: Container(
+                width: 70,
+                height: 50,
+                child: const Center(child: Text('am', style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ),
+              childWhenDragging: Container(
+                width: 70,
+                height: 50,              
+               decoration: BoxDecoration(
+                 color: Colors.grey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ),
+              ),
+               Draggable<String>(
+              data: 'Happy',
+
+              child: Container(
+                width: 70,
+                height: 50,
+                child: const Center(child: Text('Happy', style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              ), 
+              feedback: Container(
+                width: 70,
+                height: 50,
+                child: const Center(child: Text('Happy', style: TextStyle(color: Colors.white),)),
                decoration: BoxDecoration(
                  color: Colors.blueGrey,
                  border: Border.all(
@@ -91,7 +182,63 @@ class _FirstScreenState extends State<FirstScreen> {
               text = data ;
             });
           },
-                ),
+           ),
+
+           DragTarget<String>(
+                builder: (
+            BuildContext context,
+            List<dynamic> accepted2,
+            List<dynamic> rejected2,
+          ) {
+            return Container(
+                width: 70,
+                height: 50,
+                child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              );
+          },
+          onAccept: (String data) {
+            setState(() {
+              text = data ;
+            });
+          },
+           ),
+
+           DragTarget<String>(
+                builder: (
+            BuildContext context,
+            List<dynamic> accepted1,
+            List<dynamic> rejected1,
+          ) {
+            return Container(
+                width: 70,
+                height: 50,
+                child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
+               decoration: BoxDecoration(
+                 color: Colors.blueGrey,
+                 border: Border.all(
+                 color: Colors.grey,
+                 width: 2,
+                 
+               ),
+               borderRadius: BorderRadius.circular(16),
+               ),
+              );
+          },
+          onAccept: (String data) {
+            setState(() {
+              text = data ;
+            });
+          },
+           ),
           ],
         )
         
