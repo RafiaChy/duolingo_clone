@@ -156,88 +156,94 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
               ),
 
-              DragTarget<String>(
-                builder: (
+              Container(
+                child: DragTarget<String>(
+                  builder: (
             BuildContext context,
             List<dynamic> accepted,
             List<dynamic> rejected,
           ) {
             return Container(
-                width: 70,
-                height: 50,
-                child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
-               decoration: BoxDecoration(
-                 color: Colors.blueGrey,
-                 border: Border.all(
-                 color: Colors.grey,
-                 width: 2,
-                 
-               ),
-               borderRadius: BorderRadius.circular(16),
-               ),
-              );
+                  width: 70,
+                  height: 50,
+                  child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
+                 decoration: BoxDecoration(
+                   color: Colors.blueGrey,
+                   border: Border.all(
+                   color: Colors.grey,
+                   width: 2,
+                   
+                 ),
+                 borderRadius: BorderRadius.circular(16),
+                 ),
+                );
           },
           onAccept: (String data) {
             setState(() {
-              text = data ;
+                text = data ;
             });
           },
            ),
+              ),
 
-           DragTarget<String>(
-                builder: (
-            BuildContext context,
-            List<dynamic> accepted2,
-            List<dynamic> rejected2,
+           Container(
+             child: DragTarget<String>(
+                  builder: (
+              BuildContext context,
+              List<dynamic> accepted2,
+              List<dynamic> rejected2,
           ) {
-            return Container(
-                width: 70,
-                height: 50,
-                child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
-               decoration: BoxDecoration(
-                 color: Colors.blueGrey,
-                 border: Border.all(
-                 color: Colors.grey,
-                 width: 2,
-                 
-               ),
-               borderRadius: BorderRadius.circular(16),
-               ),
-              );
+              return Container(
+                  width: 70,
+                  height: 50,
+                  child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
+                 decoration: BoxDecoration(
+                   color: Colors.blueGrey,
+                   border: Border.all(
+                   color: Colors.grey,
+                   width: 2,
+                   
+                 ),
+                 borderRadius: BorderRadius.circular(16),
+                 ),
+                );
           },
           onAccept: (String data) {
-            setState(() {
-              text = data ;
-            });
+              setState(() {
+                text = data ;
+              });
           },
+             ),
            ),
 
-           DragTarget<String>(
-                builder: (
-            BuildContext context,
-            List<dynamic> accepted1,
-            List<dynamic> rejected1,
+           Container(
+             child: DragTarget<String>(
+                  builder: (
+              BuildContext context,
+              List<dynamic> accepted1,
+              List<dynamic> rejected1,
           ) {
-            return Container(
-                width: 70,
-                height: 50,
-                child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
-               decoration: BoxDecoration(
-                 color: Colors.blueGrey,
-                 border: Border.all(
-                 color: Colors.grey,
-                 width: 2,
-                 
-               ),
-               borderRadius: BorderRadius.circular(16),
-               ),
-              );
+              return Container(
+                  width: 70,
+                  height: 50,
+                  child: Center(child: Text(text, style: TextStyle(color: Colors.white),)),
+                 decoration: BoxDecoration(
+                   color: Colors.blueGrey,
+                   border: Border.all(
+                   color: Colors.grey,
+                   width: 2,
+                   
+                 ),
+                 borderRadius: BorderRadius.circular(16),
+                 ),
+                );
           },
           onAccept: (String data) {
-            setState(() {
-              text = data ;
-            });
+              setState(() {
+                text = data ;
+              });
           },
+             ),
            ),
           ],
         )
