@@ -42,8 +42,15 @@ class _FirstScreenState extends State<FirstScreen> {
               children: choices.keys.map((word) => DragTarget<String>(
               builder: (BuildContext context, List<String?> accepted, List<dynamic> rejected)
              {
-               return drags(word);
-             }
+               return drags("");
+             },
+             onWillAccept: (data) => data == word,
+             onAccept: (data){
+                setState(() {
+                  
+                });
+             },
+             
               )).toList()..shuffle(Random(5))
             ),
           
