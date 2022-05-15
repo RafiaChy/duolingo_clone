@@ -17,6 +17,8 @@ class _FirstScreenState extends State<FirstScreen> {
     'happy' : 'happy',
   };
 
+ bool condition = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +41,7 @@ class _FirstScreenState extends State<FirstScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
              
-              children: choices.keys.map((word) => buildTarget(word)).toList()
+              children: choices.values.map((word) => buildTarget(word)).toList()..shuffle()
             ),
           
           ],
@@ -64,24 +66,16 @@ class _FirstScreenState extends State<FirstScreen> {
               builder: (BuildContext context, List<String?> accepted, List<dynamic> rejected)
               
              {
-                   if(word == choices.keys){
-                    return drags(word);
-                }
-               else{
-                 return Container(
-                   width: 50,
-                   height: 50,
-                   color: Colors.blueGrey,
-                 );
-               }
+                  return condition?   drags(word): drags(''); 
                
                },
    
              onWillAccept: (data) => data == word,
              onAccept: (data){
+               condition = true;
                  print('####'+data);
                 setState(() {
-                  drags(data);
+                 
                 });
              },
              
