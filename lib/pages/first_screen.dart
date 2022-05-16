@@ -41,7 +41,7 @@ class _FirstScreenState extends State<FirstScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
              
-              children: choices.values.map((word) => buildTarget(word)).toList()..shuffle()
+              children: choices.keys.map((word) => buildTarget(word)).toList()..shuffle()
             ),
           
           ],
@@ -60,17 +60,17 @@ class _FirstScreenState extends State<FirstScreen> {
                 );
   }
 
-  Widget buildTarget(String word){
+  Widget buildTarget(String words){
 
     return DragTarget<String>(
               builder: (BuildContext context, List<String?> accepted, List<dynamic> rejected)
               
              {
-                  return condition?   drags(word): drags(''); 
+                  return condition?   drags(words): drags(''); 
                
                },
    
-             onWillAccept: (data) => data == word,
+             onWillAccept: (data) => data == words,
              onAccept: (data){
                condition = true;
                  print('####'+data);
