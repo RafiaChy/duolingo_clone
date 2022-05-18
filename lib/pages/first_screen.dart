@@ -41,7 +41,7 @@ class _FirstScreenState extends State<FirstScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
              
-              children: choices.keys.map((word) => buildTarget(word)).toList()..shuffle()
+              children: choices.keys.map((word) => buildTarget(word)).toList()
             ),
           
           ],
