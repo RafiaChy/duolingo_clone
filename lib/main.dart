@@ -1,23 +1,20 @@
-import 'package:duolingo_clone/pages/first_screen.dart';
+// import 'package:duolingo_clone/pages/ColorGame.dart';
+import 'package:duolingo_clone/pages/ColorGame.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
+        fontFamily: 'PressStart',
       ),
-      home: FirstScreen(),
+      home: ColorGame(),
     );
   }
 }
-
