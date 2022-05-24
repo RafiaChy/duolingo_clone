@@ -23,7 +23,7 @@ class _ColorGameState extends State<ColorGame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-      title: Text('score ${score.length} / 6'),
+      title: Text('score ${score.length} / 3'),
       backgroundColor: Colors.pink,
       
     ),
@@ -31,10 +31,10 @@ class _ColorGameState extends State<ColorGame> {
       score.clear();
       seed++;
     });}, child: Icon(Icons.refresh),),
-    body: Row(
+    body: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Column(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
          // crossAxisAlignment: CrossAxisAlignment.end,
           children: choices.keys.map((e) {return
@@ -42,10 +42,11 @@ class _ColorGameState extends State<ColorGame> {
            }).toList()
         ),
         
-        Column(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: choices.keys.map((e) => buildTarget(e)).toList(),
+          children: choices.keys.map((e) => Container(  height: 50,
+        width: 100,child: buildTarget(e))).toList()..shuffle(Random(seed)),
         )
       ],
     ),
@@ -60,8 +61,7 @@ class _ColorGameState extends State<ColorGame> {
         color:  Colors.pink,
         child: Text('Correct'),
         alignment: Alignment.center,
-        height: 80,
-        width: 200,
+      
       );
     }
     else{
